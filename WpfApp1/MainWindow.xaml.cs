@@ -1,6 +1,8 @@
 ﻿using carm;
+using carm.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +23,16 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private carmangerContext context;
+        private IEnumerable<Forceins> Forceins;
+
+
         public MainWindow()
         {
             InitializeComponent();
+            context = new carmangerContext();
+
+
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -33,6 +42,16 @@ namespace WpfApp1
                 if(win.GetType().Name=="Login") win.Show();
                                     
             }
+        }
+
+        public class Carlist
+        {
+            public string name { get; set; }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

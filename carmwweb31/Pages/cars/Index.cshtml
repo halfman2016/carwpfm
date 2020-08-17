@@ -1,0 +1,23 @@
+﻿@page
+@model carmwweb31.Pages.cars.IndexModel
+@{
+}
+<div class="container row p-0 m-0">
+<div class="col-9">
+    <h2 class="text-info">Car list</h2>
+</div> 
+    <div class="col-3" >
+        <a class="btn form-control btn-info text-white">Add</a>
+    </div>
+    <div class="col-12 border p-3 mt-3">
+        <form method="post">
+            @if (Model.Sysusers.Count() > 0)
+            {
+            }
+            else
+            {
+                <p>No cars !</p>
+            }
+        </form>
+    </div>
+</div>

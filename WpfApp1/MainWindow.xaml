@@ -6,7 +6,28 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
-    <Grid>
+    <Grid  >
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+        </Grid.RowDefinitions>
+        <Label x:Name="click" Content="ins" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
+        <Button Content="Button" Grid.Column="4" HorizontalAlignment="Left" Margin="629,130,0,0" Grid.Row="3" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
+
+
 </Window>

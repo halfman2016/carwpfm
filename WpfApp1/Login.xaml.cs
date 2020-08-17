@@ -20,7 +20,7 @@ namespace carm
     /// </summary>
     public partial class Login : Window
     {
-        private  carmangerContext context;
+       private  carmangerContext context;
         public Login()
         {
             InitializeComponent();
@@ -35,8 +35,7 @@ namespace carm
             var usr = txtUsr.Text;
             var pwd = txtPwd.Password;
             try
-            {
-                //var context = new carmangerContext();
+           {
                 var res = context.Sysusers.Where(s => s.Username == usr && s.Password == pwd);
                 if (res.Count() == 0)
                 {
@@ -44,7 +43,7 @@ namespace carm
                 }
                 else
                 {
-                    MainWindow main = new MainWindow();
+                   MainWindow main = new MainWindow();
                     this.Hide();
                     main.Show();
                 }
@@ -53,8 +52,8 @@ namespace carm
             {
 
 
-                MessageBox.Show("找不到服务器！");
-            }
+               MessageBox.Show("找不到服务器！");
+          }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
