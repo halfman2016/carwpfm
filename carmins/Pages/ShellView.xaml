@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:s="https://github.com/canton7/Stylet"
         xmlns:local="clr-namespace:Company.WpfApplication1.Pages"
-        mc:Ignorable="d"
         d:DataContext="{d:DesignInstance local:ShellViewModel}"
         Title="Stylet Project" Height="450" Width="800">
     <Grid>
-        <TextBlock FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center">
-            Hello Stylet!
-        </TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+          </Grid.RowDefinitions>
+ 
+        <TextBox Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}" Grid.Row="0"></TextBox>
+        <Button Content="click" Command="{s:Action Hill }"  Grid.Row="1"></Button>
     </Grid>
 </Window>

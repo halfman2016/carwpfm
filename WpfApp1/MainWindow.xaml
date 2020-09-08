@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
-    <Grid  >
+        Title="MainWindow" Height="696" Width="994" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+    <Grid Width="994" Height="696"  >
         <Grid.ColumnDefinitions>
 
             <ColumnDefinition Width="20"/>
@@ -22,11 +22,21 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
 
         </Grid.RowDefinitions>
-        <Label x:Name="click" Content="ins" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
-        <Button Content="Button" Grid.Column="4" HorizontalAlignment="Left" Margin="629,130,0,0" Grid.Row="3" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label x:Name="click" Content="车辆交强险一览" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
+        <DataGrid x:Name="insgrid" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Margin="31,0,0,-206" Grid.RowSpan="3">
 
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="序号"/>
+                <DataGridTextColumn Header="车牌号" Width="120"/>
+                <DataGridTextColumn Header="保险到期日期"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DatePicker Grid.Column="4" HorizontalAlignment="Left" Margin="777,7,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.31,0.396" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Label Content="基准日期" Grid.Column="4" HorizontalAlignment="Left" Margin="711,7,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
     </Grid>
 
 

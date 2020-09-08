@@ -1,4 +1,5 @@
 ﻿using carm.Models;
+using carm.Win;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +25,8 @@ namespace carm
         public Login()
         {
             InitializeComponent();
-            context = new carmangerContext();
-
-           
+            context = Common.cardb;
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,15 +37,30 @@ namespace carm
             try
            {
                 var res = context.Sysusers.Where(s => s.Username == usr && s.Password == pwd);
-                if (res.Count() == 0)
+                if ( !res.Any())
                 {
                     MessageBox.Show("找不到合法用户！");
                 }
                 else
                 {
-                   MainWindow main = new MainWindow();
-                    this.Hide();
-                    main.Show();
+                    Sysusers sysusers = res.ToList().First<Sysusers>();
+                    if (sysusers.OrgsIdorgs != 0 && sysusers.OrgsIdorgs!=null )
+                    {
+                        Common.username = sysusers.Username;
+                        Common.orgid = sysusers.OrgsIdorgs;
+                        MainWindow main = new MainWindow();
+                        this.Hide();
+                        main.Show();
+                    }
+                    else
+                    {
+                        Common.username = sysusers.Username;
+                        Common.orgid = sysusers.OrgsIdorgs;
+                        Admin admin = new Admin();
+                        this.Hide();
+                        admin.Show();
+                        
+                    }
                 }
             }
             catch (Exception)

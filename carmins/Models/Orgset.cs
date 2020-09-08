@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace carmins.Models
+﻿namespace carmins.Models
 {
     public partial class Orgset
     {

@@ -1,0 +1,30 @@
+﻿<Window x:Class="carm.Win.Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:carm.Win"
+        mc:Ignorable="d"
+        Title="超级管理"  Height="696" Width="994" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <ListView Name="orgslist"  ItemsSource="{Binding}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Item"
+                         DisplayMemberBinding="{Binding }"/>
+                    <GridViewColumn Header="Price"
+                          DisplayMemberBinding="{Binding Path=Price, StringFormat=c}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <DataGrid x:Name="orgrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="序号"/>
+                <DataGridTextColumn Header="组织名称" />
+                <DataGridTextColumn Header="组织编码"/>
+                <DataGridTextColumn Header="组织地址"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
